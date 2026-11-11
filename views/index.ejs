@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <h1><%= title %></h1>
+        <p><a href="/uj-szabaly">Új szabály hozzáadása</a></p>
+        <% if (szabalyok.length === 0) { %>
+            <p>Még nincs felvett szabály.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Azonosító</th>
+                        <th>Prioritás</th>
+                        <th>MAC-cím</th>
+                        <th>Állapot</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% szabalyok.forEach(szabaly => { %>
+                        <tr>
+                            <td><%= szabaly.id %></td>
+                            <td><%= szabaly.priority %></td>
+                            <td><%= szabaly.mac %></td>
+                            <td><%= szabaly.enabled ? 'Bekapcsolva' : 'Kikapcsolva' %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </main>
+</body>
+</html>

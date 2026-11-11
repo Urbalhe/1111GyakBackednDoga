@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main>
+        <h1><%= title %></h1>
+        <form method="post" action="/uj-szabaly">
+            <label for="priority">Prioritás</label>
+            <input id="priority" type="number" name="priority" min="1" required>
+
+            <label for="mac">MAC-cím</label>
+            <input id="mac" type="text" name="mac" placeholder="00:11:22:33:44:55" required>
+
+            <label>
+                <input type="checkbox" name="enabled" checked>
+                Bekapcsolva
+            </label>
+
+            <button type="submit">Hozzáadás</button>
+        </form>
+        <p><a href="/">Vissza a listához</a></p>
+    </main>
+</body>
+</html>
